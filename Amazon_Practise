@@ -1,0 +1,7 @@
+#get the top 10 emp's with the most phone numbers in the customer response column:
+
+SELECT emp_id, count(substring(customer_reqponse from '\w*[0-9]{10}\w*'))
+  FROM customer_data_amazon
+  GROUP BY emp_id
+  ORDER BY count(substring(customer_reqponse from '\w*[0-9]{10}\w*')) desc ;
+
