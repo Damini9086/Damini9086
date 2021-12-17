@@ -1,0 +1,11 @@
+select * from grouped;
+
+SELECT xx.col_B
+  FROM
+(
+SELECT col_B ,
+       (CASE WHEN col_C> col_A AND col_C>col_B THEN 1 ELSE 0 END) t
+  FROM grouped
+) xx
+WHERE xx.t=1
+;
